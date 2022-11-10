@@ -1,23 +1,23 @@
 import './App.scss';
 import { NavLink, Routes, Route, Navigate } from 'react-router-dom';
 import { PageWelcome } from './components/PageWelcome';
-import { PageInfo } from './components/PageInfo';
-import { PageAbout } from './components/PageAbout';
+import { PageBooks } from './components/PageBooks';
+import { PageFlashcards } from './components/PageFlashcards';
 
 function App() {
 	return (
 		<div className="App">
-			<h1>Info Site</h1>
+			<h1>The Study Group</h1>
 			<nav>
 				<NavLink to="/welcome">Welcome</NavLink>
-				<NavLink to="/info">Info</NavLink>
-				<NavLink to="/about">About</NavLink>
+				<NavLink to="/books">Books</NavLink>
+				<NavLink to="/flashcards">Flashcards</NavLink>
 			</nav>
 
 			<Routes>
 				<Route path="/welcome" element={<PageWelcome />} />
-				<Route path="/info" element={<PageInfo />} />
-				<Route path="/about" element={<PageAbout />} />
+				<Route path="/books" element={<PageBooks />} />
+				<Route path="/flashcards" element={<PageFlashcards />} />
 				<Route path="/" element={<Navigate to="/welcome" replace />} />
 			</Routes>
 		</div>
