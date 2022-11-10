@@ -1,8 +1,9 @@
 import { useContext } from 'react';
-import { AppContext } from '../AppContext';
+import { AppContext, IAppContext } from '../AppContext';
+import { IBook } from '../interfaces';
 
 export const PageBooks = () => {
-	const { books } = useContext<any>(AppContext);
+	const { books } = useContext<IAppContext>(AppContext);
 
 	return (
 		<div className="pageBooks">
@@ -10,8 +11,7 @@ export const PageBooks = () => {
 				<p>Loading...</p>
 			) : (
 				<div className="books">
-					{/* TODO: define interface for book */}
-					{books.map((book: any) => {
+					{books.map((book: IBook) => {
 						return (
 							<div className="book" key={book.id}>
 								<img

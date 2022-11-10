@@ -1,29 +1,22 @@
 import { useState, useEffect } from 'react';
 import { createContext } from 'react';
 import axios from 'axios';
+import { IBook } from './interfaces';
 
 export interface IAppContext {
 	appTitle: string;
-	books: any[];
+	books: IBook[];
 }
 
 interface IAppProvider {
 	children: React.ReactNode;
 }
 
-interface IBook {
-	id: number;
-	idCode: string;
-	title: string;
-	description: string;
-	language: string;
-}
-
 function capitalizeFirstLetter(line: string) {
   return line.charAt(0).toUpperCase() + line.slice(1);
 }
 
-export const AppContext = createContext<IAppContext | null>(null);
+export const AppContext = createContext<IAppContext>({} as IAppContext);
 
 const booksUrl = 'https://edwardtanguay.vercel.app/share/techBooks.json';
 
@@ -36,7 +29,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 			(async () => {
 				const rawBooks = (await axios.get(booksUrl)).data;
 				const _books:IBook[] = [];
-				rawBooks.forEach((rawBook:any) => {
+				rawBooks.forEach((rawBook:IBook) => {
 					const _book: IBook = {
 						id: rawBook.id,
 						idCode: rawBook.idCode,

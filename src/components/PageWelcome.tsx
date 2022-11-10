@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { AppContext } from '../AppContext';
+import { AppContext,IAppContext } from '../AppContext';
 
 export const PageWelcome = () => {
-	const { books } = useContext<any>(AppContext);
+	const { books } = useContext<IAppContext>(AppContext);
 
 	return (
 		<>
