@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { AppContext, IAppContext } from './AppContext'; 
 
 function App() {
-	const {appTitle}= useContext<IAppContext>(AppContext);
+	const {appTitle}= useContext<any>(AppContext);
 	return (
 		<div className="App">
 			<h1>{appTitle}</h1>
