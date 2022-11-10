@@ -1,0 +1,8 @@
+- get books an interface
+	- id
+	- idCode (image URL)
+	- title
+	- description
+	- language: if "" then English
+		- "french" --> "French"
+	

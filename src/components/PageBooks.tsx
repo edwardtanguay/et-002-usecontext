@@ -10,6 +10,7 @@ export const PageBooks = () => {
 				<p>Loading...</p>
 			) : (
 				<div className="books">
+					{/* TODO: define interface for book */}
 					{books.map((book: any) => {
 						return (
 							<div className="book" key={book.id}>
